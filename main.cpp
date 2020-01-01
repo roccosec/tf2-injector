@@ -4,7 +4,7 @@
 
 using namespace std;
 injector inj;
-const char* const compiled = __DATE__ " @ " __TIME__;
+const char* compiled = __DATE__ " @ " __TIME__;
 
 string RandomString(int len)
 {
@@ -46,5 +46,6 @@ int main() {
 		}
 
 		inj.inject(dll, proc_id, path);
+		delete(dll);
 		return 0;
 	}
