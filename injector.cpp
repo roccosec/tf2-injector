@@ -45,6 +45,7 @@ void injector::inject(const char* dll, DWORD proc_id,const char* path) {
 	std::this_thread::sleep_for(10000ms);
 
 	CloseHandle(proc_handle);
+	CloseHandle(thread);
 	VirtualFreeEx(proc_handle, alloc, NULL, MEM_RELEASE);
 	cout << "[+] Sucessfully injected.";
 	std::this_thread::sleep_for(5000ms);
